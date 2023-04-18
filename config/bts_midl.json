@@ -1,0 +1,17 @@
+{
+    "batch_size": 256,
+    "dropout": 0.3,
+    "epochs": 100,
+    "learning_rate": 0.0001,
+    "momentum": 0.9,
+    "nb_neurons": 192,
+    "num_layers": 4,
+    "output_folder": "/HOME/studerl/results-bts/midl",
+    "smoothing": 0.2,
+    "weight_decay": 0.0001,
+    "lr_scheduler": "StepLR",
+    "step_size": 10,
+    "split_json": "/net/research-dataset/studerl/BTS/pT1-manual-full/pT1-Masterfile-full-NC-cv5.json",
+    "multi_run": 5,
+    "norm": "GraphNorm"
+}
