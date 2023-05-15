@@ -12,8 +12,8 @@ Bibtex:
 }
 ```
 ## The pT1-HBTG Dataset
+The dataset is available on Zenodo: https://zenodo.org/record/7867085
 
-COMING SOON
  
 ## How to run: Graph Neural Network Framework using Pytorch Geometric and Pytorch-Lightning     
 
@@ -62,8 +62,26 @@ To set up your experiments you have to create your own experiment file in the `p
 the runner you want to use, the transformations, the performance metrics, etc.
 
 ### Run your experiment
-Example:
-`--input-folder "/HOME/studerl/datasets/TUDataset/" --model graphsage_singlegraph --output-folder ../output-debug --experiment-name test-TU-mr --epochs 2 --batch-size 2 --gpu-id 3 --subdataset-name "COLORS-3" --multi-run 2 --wandb-project test --use-node-attr`
+Examples:
+
+`./project/bts_experiments.py 
+--input-folder dino-200/other_edge_fct_delaunay 
+--output-folder results-midl/dinotypecoord 
+--model gin_jk 
+--experiment-name gin_jk-other_edge_fct_delaunay-dinotypecoord_addf 
+--wandb-project BTS-MIDL-cv5-dinotypecoord 
+--gpu-id 0 
+--config-json config/bts_midl.json 
+--add-mlp-feature-csv add_mlp_features.csv`
+
+`./project/bts_type_only.py 
+--input-folder xylabel/other_edge_fct_hierarchical-cutoff-100 
+--output-folder results-midl/type 
+--model graphsage
+--experiment-name graphsage-other_edge_fct_hierarchical-cutoff-100-type
+--wandb-project BTS-MIDL-cv5-type 
+--gpu-id 2 
+--config-json config/bts_midl.json`
 
 For the full list of command line arguments (CLA) see `util/arg_parser.py`. Arguments can be either specified via the command line,
 a config `json` file, or both (parameters set in the config file overwrite the ones specified as a CLA).
